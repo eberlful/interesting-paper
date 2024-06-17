@@ -10,4 +10,4 @@
 ### New Architecutre:
 * An Empirical Study of Mamba-based Language Models (https://arxiv.org/abs/2406.07887)
 * Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling (https://arxiv.org/abs/2406.07522)
-** https://github.com/microsoft/Samba
+* * https://github.com/microsoft/Samba
