@@ -7,3 +7,5 @@
 
 
 ## Paper
+### New Architecutre:
+* An Empirical Study of Mamba-based Language Models (https://arxiv.org/abs/2406.07887)
