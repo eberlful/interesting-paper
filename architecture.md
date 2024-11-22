@@ -1,5 +1,7 @@
 1. Hymba: A Hybrid-head Architecture for Small Language Models
 2. Natural Language Reinforcement Learning
+3. nGPT: Normalized Transformer with Representation Learning on the Hypersphere
+4. Differential Transformer
 
 
 ## Hymba: A Hybrid-head Architecture for Small Language Models
@@ -23,3 +25,25 @@ Date: 21.11.2024
 
 ##### Abstract
 Reinforcement Learning (RL) mathematically formulates decision-making with Markov Decision Process (MDP). With MDPs, researchers have achieved remarkable breakthroughs across various domains, including games, robotics, and language models. This paper seeks a new possibility, Natural Language Reinforcement Learning (NLRL), by extending traditional MDP to natural language-based representation space. Specifically, NLRL innovatively redefines RL principles, including task objectives, policy, value function, Bellman equation, and policy iteration, into their language counterparts. With recent advancements in large language models (LLMs), NLRL can be practically implemented to achieve RL-like policy and value improvement by either pure prompting or gradient-based training. Experiments over Maze, Breakthrough, and Tic-Tac-Toe games demonstrate the effectiveness, efficiency, and interpretability of the NLRL framework among diverse use cases. Our code will be released at https://github.com/waterhorse1/Natural-language-RL.
+
+## nGPT: Normalized Transformer with Representation Learning on the Hypersphere
+
+Github: https://github.com/NVIDIA/ngpt
+
+Paper: https://arxiv.org/abs/2410.01131
+
+Date: 01.10.2024
+
+##### Abstract
+We propose a novel neural network architecture, the normalized Transformer (nGPT) with representation learning on the hypersphere. In nGPT, all vectors forming the embeddings, MLP, attention matrices and hidden states are unit norm normalized. The input stream of tokens travels on the surface of a hypersphere, with each layer contributing a displacement towards the target output predictions. These displacements are defined by the MLP and attention blocks, whose vector components also reside on the same hypersphere. Experiments show that nGPT learns much faster, reducing the number of training steps required to achieve the same accuracy by a factor of 4 to 20, depending on the sequence length.
+
+## Differential Transformer
+
+Github: https://github.com/microsoft/unilm/tree/master/Diff-Transformer?utm_source=catalyzex.com
+
+Paper: https://arxiv.org/abs/2410.05258
+
+Date: 07.10.2024
+
+##### Abstract
+Transformer tends to overallocate attention to irrelevant context. In this work, we introduce Diff Transformer, which amplifies attention to the relevant context while canceling noise. Specifically, the differential attention mechanism calculates attention scores as the difference between two separate softmax attention maps. The subtraction cancels noise, promoting the emergence of sparse attention patterns. Experimental results on language modeling show that Diff Transformer outperforms Transformer in various settings of scaling up model size and training tokens. More intriguingly, it offers notable advantages in practical applications, such as long-context modeling, key information retrieval, hallucination mitigation, in-context learning, and reduction of activation outliers. By being less distracted by irrelevant context, Diff Transformer can mitigate hallucination in question answering and text summarization. For in-context learning, Diff Transformer not only enhances accuracy but is also more robust to order permutation, which was considered as a chronic robustness issue. The results position Diff Transformer as a highly effective and promising architecture to advance large language models.
