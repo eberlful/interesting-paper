@@ -18,3 +18,4 @@ https://www.youtube.com/watch?v=JTU8Ha4Jyfc
 * https://www.youtube.com/@lucasnfe/videos
 * https://www.youtube.com/@MITHANLab/videos
 * https://www.youtube.com/@AAmini/videos
+* https://www.youtube.com/@scientificcoding3153/videos
