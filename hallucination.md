@@ -3,6 +3,7 @@
 3. DebUnc: Mitigating Hallucinations in Large Language Model Agent Communication with Uncertainty Estimations
 4. Exploring Concept Depth: How Large Language Models Acquire Knowledge at Different Layers?
 5. Uncertainty Estimation and Quantification for LLMs: A Simple Supervised Approach
+6. Do LLMs "know" internally when they follow instructions?
 
 
 ## Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models
@@ -53,3 +54,12 @@ Date: 24.04.2024
 
 ##### Abstract
 In this paper, we study the problem of uncertainty estimation and calibration for LLMs. We begin by formulating the uncertainty estimation problem, a relevant yet underexplored area in existing literature. We then propose a supervised approach that leverages labeled datasets to estimate the uncertainty in LLMs' responses. Based on the formulation, we illustrate the difference between the uncertainty estimation for LLMs and that for standard ML models and explain why the hidden neurons of the LLMs may contain uncertainty information. Our designed approach demonstrates the benefits of utilizing hidden activations to enhance uncertainty estimation across various tasks and shows robust transferability in out-of-distribution settings. We distinguish the uncertainty estimation task from the uncertainty calibration task and show that better uncertainty estimation leads to better calibration performance. Furthermore, our method is easy to implement and adaptable to different levels of model accessibility including black box, grey box, and white box.
+
+## Do LLMs "know" internally when they follow instructions?
+
+Paper: https://arxiv.org/pdf/2410.14516
+
+Date: 18.10.2024
+
+##### Abstract
+Instruction-following is crucial for building AI agents with large language models (LLMs), as these models must adhere strictly to user-provided constraints and guidelines. However, LLMs often fail to follow even simple and clear instructions. To improve instruction-following behavior and prevent undesirable outputs, a deeper understanding of how LLMs' internal states relate to these outcomes is required. Our analysis of LLM internal states reveal a dimension in the input embedding space linked to successful instruction-following. We demonstrate that modifying representations along this dimension improves instruction-following success rates compared to random changes, without compromising response quality. Further investigation reveals that this dimension is more closely related to the phrasing of prompts rather than the inherent difficulty of the task or instructions. This discovery also suggests explanations for why LLMs sometimes fail to follow clear instructions and why prompt engineering is often effective, even when the content remains largely unchanged. This work provides insight into the internal workings of LLMs' instruction-following, paving the way for reliable LLM agents.
