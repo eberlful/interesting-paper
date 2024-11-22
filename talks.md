@@ -15,3 +15,4 @@ https://www.youtube.com/watch?v=JTU8Ha4Jyfc
 
 ### Interesting Channels:
 * https://www.youtube.com/@avb_fj/videos
+* https://www.youtube.com/@lucasnfe/videos
