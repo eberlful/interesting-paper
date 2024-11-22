@@ -2,6 +2,7 @@
 2. Do LLMs Know about Hallucination? An Empirical Investigation of LLM's Hidden States
 3. DebUnc: Mitigating Hallucinations in Large Language Model Agent Communication with Uncertainty Estimations
 4. Exploring Concept Depth: How Large Language Models Acquire Knowledge at Different Layers?
+5. Uncertainty Estimation and Quantification for LLMs: A Simple Supervised Approach
 
 
 ## Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models
@@ -43,3 +44,12 @@ Date: 10.04.2024
 
 ##### Abstract
 Large language models (LLMs) have shown remarkable performances across a wide range of tasks. However, the mechanisms by which these models encode tasks of varying complexities remain poorly understood. In this paper, we explore the hypothesis that LLMs process concepts of varying complexities in different layers, introducing the idea of ``Concept Depth'' to suggest that more complex concepts are typically acquired in deeper layers. Specifically, we categorize concepts based on their level of abstraction, defining them in the order of increasing complexity within factual, emotional, and inferential tasks. We conduct extensive probing experiments using layer-wise representations across various LLM families (Gemma, LLaMA, Qwen) on various datasets spanning the three domains of tasks. Our findings reveal that models could efficiently conduct probing for simpler tasks in shallow layers, and more complex tasks typically necessitate deeper layers for accurate understanding. Additionally, we examine how external factors, such as adding noise to the input and quantizing the model weights, might affect layer-wise representations. Our findings suggest that these factors can impede the development of a conceptual understanding of LLMs until deeper layers are explored. We hope that our proposed concept and experimental insights will enhance the understanding of the mechanisms underlying LLMs. Our codes are available at \url{this https URL}.
+
+## Uncertainty Estimation and Quantification for LLMs: A Simple Supervised Approach
+
+Paper: https://arxiv.org/pdf/2404.15993
+
+Date: 24.04.2024
+
+##### Abstract
+In this paper, we study the problem of uncertainty estimation and calibration for LLMs. We begin by formulating the uncertainty estimation problem, a relevant yet underexplored area in existing literature. We then propose a supervised approach that leverages labeled datasets to estimate the uncertainty in LLMs' responses. Based on the formulation, we illustrate the difference between the uncertainty estimation for LLMs and that for standard ML models and explain why the hidden neurons of the LLMs may contain uncertainty information. Our designed approach demonstrates the benefits of utilizing hidden activations to enhance uncertainty estimation across various tasks and shows robust transferability in out-of-distribution settings. We distinguish the uncertainty estimation task from the uncertainty calibration task and show that better uncertainty estimation leads to better calibration performance. Furthermore, our method is easy to implement and adaptable to different levels of model accessibility including black box, grey box, and white box.
