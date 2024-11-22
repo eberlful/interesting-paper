@@ -1,6 +1,7 @@
 1. Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models
 2. Do LLMs Know about Hallucination? An Empirical Investigation of LLM's Hidden States
 3. DebUnc: Mitigating Hallucinations in Large Language Model Agent Communication with Uncertainty Estimations
+4. Exploring Concept Depth: How Large Language Models Acquire Knowledge at Different Layers?
 
 
 ## Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models
@@ -31,3 +32,14 @@ Date: 08.07.2024
 
 ##### Abstract
 To enhance Large Language Model (LLM) capabilities, multi-agent debates have been introduced, where multiple LLMs discuss solutions to a problem over several rounds of debate. However, LLMs often produce incorrect responses that appear deceptively confident, which can mislead other agents. This is partly because agents do not express their confidence levels during standard debates. To address this, we introduce DebUnc, a multi-agent debate framework that uses uncertainty metrics to assess agent confidence levels. We adapted the LLM attention mechanism to adjust token weights based on confidence levels and also explored using textual prompts to convey confidence. Our evaluations across various benchmarks show that attention-based methods are particularly effective, and that as uncertainty metrics evolve, performance will continue to increase. The code is available at this https URL
+
+## Exploring Concept Depth: How Large Language Models Acquire Knowledge at Different Layers?
+
+Github: https://github.com/Luckfort/CD
+
+Paper: https://arxiv.org/pdf/2404.07066
+
+Date: 10.04.2024
+
+##### Abstract
+Large language models (LLMs) have shown remarkable performances across a wide range of tasks. However, the mechanisms by which these models encode tasks of varying complexities remain poorly understood. In this paper, we explore the hypothesis that LLMs process concepts of varying complexities in different layers, introducing the idea of ``Concept Depth'' to suggest that more complex concepts are typically acquired in deeper layers. Specifically, we categorize concepts based on their level of abstraction, defining them in the order of increasing complexity within factual, emotional, and inferential tasks. We conduct extensive probing experiments using layer-wise representations across various LLM families (Gemma, LLaMA, Qwen) on various datasets spanning the three domains of tasks. Our findings reveal that models could efficiently conduct probing for simpler tasks in shallow layers, and more complex tasks typically necessitate deeper layers for accurate understanding. Additionally, we examine how external factors, such as adding noise to the input and quantizing the model weights, might affect layer-wise representations. Our findings suggest that these factors can impede the development of a conceptual understanding of LLMs until deeper layers are explored. We hope that our proposed concept and experimental insights will enhance the understanding of the mechanisms underlying LLMs. Our codes are available at \url{this https URL}.
