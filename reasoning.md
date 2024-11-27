@@ -1,6 +1,7 @@
 1. Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
 2. GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models
 3. The Surprising Effectiveness of Test-Time Training for Abstract Reasoning
+4. LLMs Do Not Think Step-by-step In Implicit Reasoning
 
 
 ## Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
@@ -34,3 +35,12 @@ Date: 11.11.2024
 
 ##### Abstract
 Language models have shown impressive performance on tasks within their training distribution, but often struggle with novel problems requiring complex reasoning. We investigate the effectiveness of test-time training (TTT) -- updating model parameters temporarily during inference using a loss derived from input data -- as a mechanism for improving models' reasoning capabilities, using the Abstraction and Reasoning Corpus (ARC) as a benchmark. Through systematic experimentation, we identify three crucial components for successful TTT: (1) initial finetuning on similar tasks (2) auxiliary task format and augmentations (3) per-instance training. TTT significantly improves performance on ARC tasks, achieving up to 6x improvement in accuracy compared to base fine-tuned models; applying TTT to an 8B-parameter language model, we achieve 53% accuracy on the ARC's public validation set, improving the state-of-the-art by nearly 25% for public and purely neural approaches. By ensembling our method with recent program generation approaches, we get SoTA public validation accuracy of 61.9%, matching the average human score. Our findings suggest that explicit symbolic search is not the only path to improved abstract reasoning in neural language models; additional test-time applied to continued training on few-shot examples can also be extremely effective.
+
+## LLMs Do Not Think Step-by-step In Implicit Reasoning
+
+Paper: https://arxiv.org/pdf/2411.15862
+
+Date: 24.11.2024
+
+##### Abstract
+It has been well-known that Chain-of-Thought can remarkably enhance LLMs' performance on complex tasks. However, because it also introduces slower inference speeds and higher computational costs, many researches have attempted to use implicit CoT, which does not need LLMs to explicitly generate the intermediate steps. But there is still gap between their efficacy and typical explicit CoT methods. This leaves us a doubt that, does implicit CoT really equal to explicit CoT? Therefore, in this study, we address this question through experiments. We probe the information of intermediate steps from the model's hidden states when it is performing implicit CoT. The results surprisingly indicate that LLMs hardly think about intermediate steps, suggesting they may just rely on experience rather than strict step-by-step reasoning. Moreover, we find LLMs' implicit reasoning capabilities are susceptible and unstable, reaffirming the necessity of explicit CoT to effectively support complex tasks.
