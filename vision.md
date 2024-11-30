@@ -1,6 +1,7 @@
 1. DINOv2: Learning Robust Visual Features without Supervision
 2. Towards Generalized Entropic Sparsification for Convolutional Neural Networks
 3. DINO-X: A Unified Vision Model for Open-World Object Detection and Understanding
+4. FilterViT and DropoutViT
 
 
 ## DINOv2: Learning Robust Visual Features without Supervision
@@ -46,3 +47,16 @@ Date: 21.11.2024
 
 ##### Abstract
 In this paper, we introduce DINO-X, which is a unified object-centric vision model developed by IDEA Research with the best open-world object detection performance to date. DINO-X employs the same Transformer-based encoder-decoder architecture as Grounding DINO 1.5 to pursue an object-level representation for open-world object understanding. To make long-tailed object detection easy, DINO-X extends its input options to support text prompt, visual prompt, and customized prompt. With such flexible prompt options, we develop a universal object prompt to support prompt-free open-world detection, making it possible to detect anything in an image without requiring users to provide any prompt. To enhance the model's core grounding capability, we have constructed a large-scale dataset with over 100 million high-quality grounding samples, referred to as Grounding-100M, for advancing the model's open-vocabulary detection performance. Pre-training on such a large-scale grounding dataset leads to a foundational object-level representation, which enables DINO-X to integrate multiple perception heads to simultaneously support multiple object perception and understanding tasks, including detection, segmentation, pose estimation, object captioning, object-based QA, etc. Experimental results demonstrate the superior performance of DINO-X. Specifically, the DINO-X Pro model achieves 56.0 AP, 59.8 AP, and 52.4 AP on the COCO, LVIS-minival, and LVIS-val zero-shot object detection benchmarks, respectively. Notably, it scores 63.3 AP and 56.5 AP on the rare classes of LVIS-minival and LVIS-val benchmarks, both improving the previous SOTA performance by 5.8 AP. Such a result underscores its significantly improved capacity for recognizing long-tailed objects.
+
+## FilterViT and DropoutViT
+
+Github: https://github.com/BobSun98/FilterVIT
+
+Paper: https://arxiv.org/abs/2410.22709
+
+Date: 10.11.2024
+
+##### Abstract
+In this study, we introduce an enhanced version of ViT that conducts attention-based QKV operations during the initial stages of downsampling. Performing attention directly on high-resolution feature maps is computationally demanding due to the large size and numerous tokens. To mitigate this, we propose a filter attention mechanism that uses a Filter Block to create a salient mask (Filter Mask) for selecting the most informative pixels for attention.
+The Filter Block scores the pixels of the feature map, and we sort these scores to retain only the top K pixels (with K varying across layers). This approach effectively decreases the number of tokens involved in the attention computation, reducing computational complexity and boosting processing speed. Furthermore, the salient mask provides interpretability, as the model focuses on regions of the image most critical to the outcome.
+Our experimental results show that this model improves parameter efficiency and computational speed while enhancing accuracy. Compared to existing models, our approach significantly reduces resource consumption while maintaining high performance.
