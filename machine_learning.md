@@ -1,6 +1,7 @@
 1. Cut Your Losses in Large-Vocabulary Language Models
 2. Neural Metamorphosis
 3. LAuReL: Learned Augmented Residual Layer
+4. Differentiable Weightless Neural Networks
 
 
 ## Cut Your Losses in Large-Vocabulary Language Models
@@ -34,3 +35,14 @@ Date: 13.11.2024
 ##### Abstract
 One of the core pillars of efficient deep learning methods is architectural improvements such as the residual/skip connection, which has led to significantly better model convergence and quality. Since then the residual connection has become ubiquitous in not just convolutional neural networks but also transformer-based architectures, the backbone of LLMs.
 In this paper we introduce \emph{Learned Augmented Residual Layer} (LAuReL) -- a novel generalization of the canonical residual connection -- with the goal to be an in-situ replacement of the latter while outperforming on both model quality and footprint metrics. Our experiments show that using \laurel can help boost performance for both vision and language models. For example, on the ResNet-50, ImageNet 1K task, it achieves 60% of the gains from adding an extra layer, while only adding 0.003% more parameters, and matches it while adding 2.6× fewer parameters.
+
+## Differentiable Weightless Neural Networks
+
+Github: https://github.com/alanbacellar/DWN
+
+Paper: https://arxiv.org/abs/2410.11112
+
+Date: 27.11.2024
+
+##### Abstract
+We introduce the Differentiable Weightless Neural Network (DWN), a model based on interconnected lookup tables. Training of DWNs is enabled by a novel Extended Finite Difference technique for approximate differentiation of binary values. We propose Learnable Mapping, Learnable Reduction, and Spectral Regularization to further improve the accuracy and efficiency of these models. We evaluate DWNs in three edge computing contexts: (1) an FPGA-based hardware accelerator, where they demonstrate superior latency, throughput, energy efficiency, and model area compared to state-of-the-art solutions, (2) a low-power microcontroller, where they achieve preferable accuracy to XGBoost while subject to stringent memory constraints, and (3) ultra-low-cost chips, where they consistently outperform small models in both accuracy and projected hardware area. DWNs also compare favorably against leading approaches for tabular datasets, with higher average rank. Overall, our work positions DWNs as a pioneering solution for edge-compatible high-throughput neural networks.
