@@ -2,6 +2,7 @@
 2. Towards Generalized Entropic Sparsification for Convolutional Neural Networks
 3. DINO-X: A Unified Vision Model for Open-World Object Detection and Understanding
 4. FilterViT and DropoutViT
+5. MobileMamba: Lightweight Multi-Receptive Visual Mamba Network
 
 
 ## DINOv2: Learning Robust Visual Features without Supervision
@@ -60,3 +61,14 @@ Date: 10.11.2024
 In this study, we introduce an enhanced version of ViT that conducts attention-based QKV operations during the initial stages of downsampling. Performing attention directly on high-resolution feature maps is computationally demanding due to the large size and numerous tokens. To mitigate this, we propose a filter attention mechanism that uses a Filter Block to create a salient mask (Filter Mask) for selecting the most informative pixels for attention.
 The Filter Block scores the pixels of the feature map, and we sort these scores to retain only the top K pixels (with K varying across layers). This approach effectively decreases the number of tokens involved in the attention computation, reducing computational complexity and boosting processing speed. Furthermore, the salient mask provides interpretability, as the model focuses on regions of the image most critical to the outcome.
 Our experimental results show that this model improves parameter efficiency and computational speed while enhancing accuracy. Compared to existing models, our approach significantly reduces resource consumption while maintaining high performance.
+
+## MobileMamba: Lightweight Multi-Receptive Visual Mamba Network
+
+Github: https://github.com/lewandofskee/MobileMamba
+
+Paper: https://arxiv.org/abs/2411.15941
+
+Date: 24.11.2024
+
+##### Abstract
+Previous research on lightweight models has primarily focused on CNNs and Transformer-based designs. CNNs, with their local receptive fields, struggle to capture long-range dependencies, while Transformers, despite their global modeling capabilities, are limited by quadratic computational complexity in high-resolution scenarios. Recently, state-space models have gained popularity in the visual domain due to their linear computational complexity. Despite their low FLOPs, current lightweight Mamba-based models exhibit suboptimal throughput. In this work, we propose the MobileMamba framework, which balances efficiency and performance. We design a three-stage network to enhance inference speed significantly. At a fine-grained level, we introduce the Multi-Receptive Field Feature Interaction(MRFFI) module, comprising the Long-Range Wavelet Transform-Enhanced Mamba(WTE-Mamba), Efficient Multi-Kernel Depthwise Convolution(MK-DeConv), and Eliminate Redundant Identity components. This module integrates multi-receptive field information and enhances high-frequency detail extraction. Additionally, we employ training and testing strategies to further improve performance and efficiency. MobileMamba achieves up to 83.6% on Top-1, surpassing existing state-of-the-art methods which is maximum x21 faster than LocalVim on GPU. Extensive experiments on high-resolution downstream tasks demonstrate that MobileMamba surpasses current efficient models, achieving an optimal balance between speed and accuracy.
