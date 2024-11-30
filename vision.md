@@ -3,6 +3,7 @@
 3. DINO-X: A Unified Vision Model for Open-World Object Detection and Understanding
 4. FilterViT and DropoutViT
 5. MobileMamba: Lightweight Multi-Receptive Visual Mamba Network
+6. Deformable DETR: Deformable Transformers for End-to-End Object Detection
 
 
 ## DINOv2: Learning Robust Visual Features without Supervision
@@ -72,3 +73,14 @@ Date: 24.11.2024
 
 ##### Abstract
 Previous research on lightweight models has primarily focused on CNNs and Transformer-based designs. CNNs, with their local receptive fields, struggle to capture long-range dependencies, while Transformers, despite their global modeling capabilities, are limited by quadratic computational complexity in high-resolution scenarios. Recently, state-space models have gained popularity in the visual domain due to their linear computational complexity. Despite their low FLOPs, current lightweight Mamba-based models exhibit suboptimal throughput. In this work, we propose the MobileMamba framework, which balances efficiency and performance. We design a three-stage network to enhance inference speed significantly. At a fine-grained level, we introduce the Multi-Receptive Field Feature Interaction(MRFFI) module, comprising the Long-Range Wavelet Transform-Enhanced Mamba(WTE-Mamba), Efficient Multi-Kernel Depthwise Convolution(MK-DeConv), and Eliminate Redundant Identity components. This module integrates multi-receptive field information and enhances high-frequency detail extraction. Additionally, we employ training and testing strategies to further improve performance and efficiency. MobileMamba achieves up to 83.6% on Top-1, surpassing existing state-of-the-art methods which is maximum x21 faster than LocalVim on GPU. Extensive experiments on high-resolution downstream tasks demonstrate that MobileMamba surpasses current efficient models, achieving an optimal balance between speed and accuracy.
+
+## Deformable DETR: Deformable Transformers for End-to-End Object Detection
+
+Github: https://github.com/fundamentalvision/Deformable-DETR
+
+Paper: https://arxiv.org/abs/2010.04159
+
+Date: 18.03.2021
+
+##### Abstract
+DETR has been recently proposed to eliminate the need for many hand-designed components in object detection while demonstrating good performance. However, it suffers from slow convergence and limited feature spatial resolution, due to the limitation of Transformer attention modules in processing image feature maps. To mitigate these issues, we proposed Deformable DETR, whose attention modules only attend to a small set of key sampling points around a reference. Deformable DETR can achieve better performance than DETR (especially on small objects) with 10 times less training epochs. Extensive experiments on the COCO benchmark demonstrate the effectiveness of our approach. Code is released at this https URL.
