@@ -2,6 +2,7 @@
 2. Neural Metamorphosis
 3. LAuReL: Learned Augmented Residual Layer
 4. Differentiable Weightless Neural Networks
+5. DeMo: Decoupled Momentum Optimization
 
 
 ## Cut Your Losses in Large-Vocabulary Language Models
@@ -46,3 +47,14 @@ Date: 27.11.2024
 
 ##### Abstract
 We introduce the Differentiable Weightless Neural Network (DWN), a model based on interconnected lookup tables. Training of DWNs is enabled by a novel Extended Finite Difference technique for approximate differentiation of binary values. We propose Learnable Mapping, Learnable Reduction, and Spectral Regularization to further improve the accuracy and efficiency of these models. We evaluate DWNs in three edge computing contexts: (1) an FPGA-based hardware accelerator, where they demonstrate superior latency, throughput, energy efficiency, and model area compared to state-of-the-art solutions, (2) a low-power microcontroller, where they achieve preferable accuracy to XGBoost while subject to stringent memory constraints, and (3) ultra-low-cost chips, where they consistently outperform small models in both accuracy and projected hardware area. DWNs also compare favorably against leading approaches for tabular datasets, with higher average rank. Overall, our work positions DWNs as a pioneering solution for edge-compatible high-throughput neural networks.
+
+## DeMo: Decoupled Momentum Optimization
+
+Github: https://github.com/bloc97/DeMo
+
+Paper: https://arxiv.org/abs/2411.19870
+
+Date: 29.11.2024
+
+##### Abstract
+Training large neural networks typically requires sharing gradients between accelerators through specialized high-speed interconnects. Drawing from the signal processing principles of frequency decomposition and energy compaction, we demonstrate that synchronizing full optimizer states and model parameters during training is unnecessary. By decoupling momentum updates and allowing controlled divergence in optimizer states across accelerators, we achieve improved convergence compared to state-of-the-art optimizers. We introduce {\textbf{De}}coupled {\textbf{Mo}}mentum (DeMo), a fused optimizer and data parallel algorithm that reduces inter-accelerator communication requirements by several orders of magnitude. This enables training of large neural networks even with limited network bandwidth and heterogeneous hardware. Our method is topology-agnostic and architecture-independent and supports scalable clock-synchronous distributed training with negligible compute and memory overhead. Empirical results show that models trained with DeMo match or exceed the performance of equivalent models trained with AdamW, while eliminating the need for high-speed interconnects when pre-training large scale foundation models. An open source reference PyTorch implementation is published on GitHub at this https URL
