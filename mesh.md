@@ -2,6 +2,7 @@
 2. Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation
 3. TEXGen: a Generative Diffusion Model for Mesh Textures
 4. SAR3D: Autoregressive 3D Object Generation and Understanding via Multi-scale 3D VQVAE
+5. Meshtron: High-Fidelity, Artist-Like 3D Mesh Generation at Scale
 
 ## Scaling Mesh Generation via Compressive Tokenization
 
@@ -46,3 +47,13 @@ Date: 25.11.2024
 
 ##### Abstract
 Autoregressive models have demonstrated remarkable success across various fields, from large language models (LLMs) to large multimodal models (LMMs) and 2D content generation, moving closer to artificial general intelligence (AGI). Despite these advances, applying autoregressive approaches to 3D object generation and understanding remains largely unexplored. This paper introduces Scale AutoRegressive 3D (SAR3D), a novel framework that leverages a multi-scale 3D vector-quantized variational autoencoder (VQVAE) to tokenize 3D objects for efficient autoregressive generation and detailed understanding. By predicting the next scale in a multi-scale latent representation instead of the next single token, SAR3D reduces generation time significantly, achieving fast 3D object generation in just 0.82 seconds on an A6000 GPU. Additionally, given the tokens enriched with hierarchical 3D-aware information, we finetune a pretrained LLM on them, enabling multimodal comprehension of 3D content. Our experiments show that SAR3D surpasses current 3D generation methods in both speed and quality and allows LLMs to interpret and caption 3D models comprehensively.
+
+
+## Meshtron: High-Fidelity, Artist-Like 3D Mesh Generation at Scale
+
+Paper: https://arxiv.org/abs/2412.09548
+
+Date: 12.12.2024
+
+##### Abstract
+Meshes are fundamental representations of 3D surfaces. However, creating high-quality meshes is a labor-intensive task that requires significant time and expertise in 3D modeling. While a delicate object often requires over 104 faces to be accurately modeled, recent attempts at generating artist-like meshes are limited to 1.6K faces and heavy discretization of vertex coordinates. Hence, scaling both the maximum face count and vertex coordinate resolution is crucial to producing high-quality meshes of realistic, complex 3D objects. We present Meshtron, a novel autoregressive mesh generation model able to generate meshes with up to 64K faces at 1024-level coordinate resolution --over an order of magnitude higher face count and 8× higher coordinate resolution than current state-of-the-art methods. Meshtron's scalability is driven by four key components: (1) an hourglass neural architecture, (2) truncated sequence training, (3) sliding window inference, (4) a robust sampling strategy that enforces the order of mesh sequences. This results in over 50% less training memory, 2.5× faster throughput, and better consistency than existing works. Meshtron generates meshes of detailed, complex 3D objects at unprecedented levels of resolution and fidelity, closely resembling those created by professional artists, and opening the door to more realistic generation of detailed 3D assets for animation, gaming, and virtual environments.
