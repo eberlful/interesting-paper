@@ -21,3 +21,9 @@ https://www.youtube.com/watch?v=D9qqHtrvcGY
 
 Quantum Computing Fundamentals - Lecture 1 2020
 https://www.youtube.com/watch?v=KypoaApdVM4&list=PLuCiyb3e0bwsOCcleNyfHtVGibmzlA_KP
+
+Brain Really Uses Quantum Effects, New Study Finds
+https://www.youtube.com/watch?v=R6G1D2UQ3gg
+
+Was Penrose Right? NEW EVIDENCE For Quantum Effects In The Brain
+https://www.youtube.com/watch?v=xa2Kpkksf3k
