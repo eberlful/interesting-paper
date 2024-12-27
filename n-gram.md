@@ -21,3 +21,6 @@ https://arxiv.org/abs/2409.03295
 
 Can Transformers Learn n-gram Language Models?
 https://arxiv.org/abs/2410.03001
+
+N-gram Is Back: Residual Learning of Neural Text Generation with n-gram Language Model
+https://arxiv.org/abs/2210.14431?utm_source=chatgpt.com
