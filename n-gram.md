@@ -24,3 +24,6 @@ https://arxiv.org/abs/2410.03001
 
 N-gram Is Back: Residual Learning of Neural Text Generation with n-gram Language Model
 https://arxiv.org/abs/2210.14431?utm_source=chatgpt.com
+
+Interpretable Language Modeling via Induction-head Ngram Models
+https://arxiv.org/abs/2411.00066
