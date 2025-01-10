@@ -11,6 +11,7 @@
 11. Test-time Computing: from System-1 Thinking to System-2 Thinking
 12. rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
 13. Towards System 2 Reasoning in LLMs: Learning How to Think With Meta Chain-of-Though
+14. Search-o1: Agentic Search-Enhanced Large Reasoning Models
 
 
 ## Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
@@ -140,3 +141,14 @@ Date: 08.01.2025
 
 ##### Abstract
 We propose a novel framework, Meta Chain-of-Thought (Meta-CoT), which extends traditional Chain-of-Thought (CoT) by explicitly modeling the underlying reasoning required to arrive at a particular CoT. We present empirical evidence from state-of-the-art models exhibiting behaviors consistent with in-context search, and explore methods for producing Meta-CoT via process supervision, synthetic data generation, and search algorithms. Finally, we outline a concrete pipeline for training a model to produce Meta-CoTs, incorporating instruction tuning with linearized search traces and reinforcement learning post-training. Finally, we discuss open research questions, including scaling laws, verifier roles, and the potential for discovering novel reasoning algorithms. This work provides a theoretical and practical roadmap to enable Meta-CoT in LLMs, paving the way for more powerful and human-like reasoning in artificial intelligence.
+
+## Search-o1: Agentic Search-Enhanced Large Reasoning Models
+
+Github: https://github.com/sunnynexus/Search-o1
+
+Paper: https://arxiv.org/abs/2501.05366
+
+Date: 09.01.2025
+
+##### Abstract
+Large reasoning models (LRMs) like OpenAI-o1 have demonstrated impressive long stepwise reasoning capabilities through large-scale reinforcement learning. However, their extended reasoning processes often suffer from knowledge insufficiency, leading to frequent uncertainties and potential errors. To address this limitation, we introduce Search-o1, a framework that enhances LRMs with an agentic retrieval-augmented generation (RAG) mechanism and a Reason-in-Documents module for refining retrieved documents. Search-o1 integrates an agentic search workflow into the reasoning process, enabling dynamic retrieval of external knowledge when LRMs encounter uncertain knowledge points. Additionally, due to the verbose nature of retrieved documents, we design a separate Reason-in-Documents module to deeply analyze the retrieved information before injecting it into the reasoning chain, minimizing noise and preserving coherent reasoning flow. Extensive experiments on complex reasoning tasks in science, mathematics, and coding, as well as six open-domain QA benchmarks, demonstrate the strong performance of Search-o1. This approach enhances the trustworthiness and applicability of LRMs in complex reasoning tasks, paving the way for more reliable and versatile intelligent systems. The code is available at https://github.com/sunnynexus/Search-o1.
