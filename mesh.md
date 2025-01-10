@@ -3,6 +3,7 @@
 3. TEXGen: a Generative Diffusion Model for Mesh Textures
 4. SAR3D: Autoregressive 3D Object Generation and Understanding via Multi-scale 3D VQVAE
 5. Meshtron: High-Fidelity, Artist-Like 3D Mesh Generation at Scale
+6. SPAR3D: Stable Point-Aware Reconstruction of 3D Objects from Single Images
 
 ## Scaling Mesh Generation via Compressive Tokenization
 
@@ -57,3 +58,14 @@ Date: 12.12.2024
 
 ##### Abstract
 Meshes are fundamental representations of 3D surfaces. However, creating high-quality meshes is a labor-intensive task that requires significant time and expertise in 3D modeling. While a delicate object often requires over 104 faces to be accurately modeled, recent attempts at generating artist-like meshes are limited to 1.6K faces and heavy discretization of vertex coordinates. Hence, scaling both the maximum face count and vertex coordinate resolution is crucial to producing high-quality meshes of realistic, complex 3D objects. We present Meshtron, a novel autoregressive mesh generation model able to generate meshes with up to 64K faces at 1024-level coordinate resolution --over an order of magnitude higher face count and 8× higher coordinate resolution than current state-of-the-art methods. Meshtron's scalability is driven by four key components: (1) an hourglass neural architecture, (2) truncated sequence training, (3) sliding window inference, (4) a robust sampling strategy that enforces the order of mesh sequences. This results in over 50% less training memory, 2.5× faster throughput, and better consistency than existing works. Meshtron generates meshes of detailed, complex 3D objects at unprecedented levels of resolution and fidelity, closely resembling those created by professional artists, and opening the door to more realistic generation of detailed 3D assets for animation, gaming, and virtual environments.
+
+## SPAR3D: Stable Point-Aware Reconstruction of 3D Objects from Single Images
+
+Github: https://spar3d.github.io/
+
+Paper: https://arxiv.org/abs/2501.04689
+
+Date: 08.01.2025
+
+##### Abstract
+We study the problem of single-image 3D object reconstruction. Recent works have diverged into two directions: regression-based modeling and generative modeling. Regression methods efficiently infer visible surfaces, but struggle with occluded regions. Generative methods handle uncertain regions better by modeling distributions, but are computationally expensive and the generation is often misaligned with visible surfaces. In this paper, we present SPAR3D, a novel two-stage approach aiming to take the best of both directions. The first stage of SPAR3D generates sparse 3D point clouds using a lightweight point diffusion model, which has a fast sampling speed. The second stage uses both the sampled point cloud and the input image to create highly detailed meshes. Our two-stage design enables probabilistic modeling of the ill-posed single-image 3D task while maintaining high computational efficiency and great output fidelity. Using point clouds as an intermediate representation further allows for interactive user edits. Evaluated on diverse datasets, SPAR3D demonstrates superior performance over previous state-of-the-art methods, at an inference speed of 0.7 seconds. Project page with code and model: https://spar3d.github.io
