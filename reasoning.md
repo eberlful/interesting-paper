@@ -8,6 +8,7 @@
 8. Thinking in Space: How Multimodal Large Language Models See, Remember, and Recall Spaces
 9. Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs
 10. Mulberry: Empowering MLLM with o1-like Reasoning and Reflection via Collective Monte Carlo Tree Search
+11. Test-time Computing: from System-1 Thinking to System-2 Thinking
 
 
 ## Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
@@ -108,3 +109,14 @@ Date: 24.12.2024
 
 ##### Abstract
 In this work, we aim to develop an MLLM that understands and solves questions by learning to create each intermediate step of the reasoning involved till the final answer. To this end, we propose Collective Monte Carlo Tree Search (CoMCTS), a new learning-to-reason method for MLLMs, which introduces the concept of collective learning into ``tree search'' for effective and efficient reasoning-path searching and learning. The core idea of CoMCTS is to leverage collective knowledge from multiple models to collaboratively conjecture, search and identify effective reasoning paths toward correct answers via four iterative operations including Expansion, Simulation and Error Positioning, Backpropagation, and Selection. Using CoMCTS, we construct Mulberry-260k, a multimodal dataset with a tree of rich, explicit and well-defined reasoning nodes for each question. With Mulberry-260k, we perform collective SFT to train our model, Mulberry, a series of MLLMs with o1-like step-by-step Reasoning and Reflection capabilities. Extensive experiments demonstrate the superiority of our proposed methods on various benchmarks. Code will be available at this https URL
+
+## Test-time Computing: from System-1 Thinking to System-2 Thinking
+
+Github: https://github.com/Dereck0602/Awesome_Test_Time_LLMs
+
+Paper: https://arxiv.org/abs/2501.02497
+
+Date: 05.01.2024
+
+##### Abstract
+The remarkable performance of the o1 model in complex reasoning demonstrates that test-time computing scaling can further unlock the model's potential, enabling powerful System-2 thinking. However, there is still a lack of comprehensive surveys for test-time computing scaling. We trace the concept of test-time computing back to System-1 models. In System-1 models, test-time computing addresses distribution shifts and improves robustness and generalization through parameter updating, input modification, representation editing, and output calibration. In System-2 models, it enhances the model's reasoning ability to solve complex problems through repeated sampling, self-correction, and tree search. We organize this survey according to the trend of System-1 to System-2 thinking, highlighting the key role of test-time computing in the transition from System-1 models to weak System-2 models, and then to strong System-2 models. We also point out a few possible future directions.
