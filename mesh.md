@@ -4,6 +4,7 @@
 4. SAR3D: Autoregressive 3D Object Generation and Understanding via Multi-scale 3D VQVAE
 5. Meshtron: High-Fidelity, Artist-Like 3D Mesh Generation at Scale
 6. SPAR3D: Stable Point-Aware Reconstruction of 3D Objects from Single Images
+7. CaPa: Carve-n-Paint Synthesis for Efficient 4K Textured Mesh Generation
 
 ## Scaling Mesh Generation via Compressive Tokenization
 
@@ -69,3 +70,14 @@ Date: 08.01.2025
 
 ##### Abstract
 We study the problem of single-image 3D object reconstruction. Recent works have diverged into two directions: regression-based modeling and generative modeling. Regression methods efficiently infer visible surfaces, but struggle with occluded regions. Generative methods handle uncertain regions better by modeling distributions, but are computationally expensive and the generation is often misaligned with visible surfaces. In this paper, we present SPAR3D, a novel two-stage approach aiming to take the best of both directions. The first stage of SPAR3D generates sparse 3D point clouds using a lightweight point diffusion model, which has a fast sampling speed. The second stage uses both the sampled point cloud and the input image to create highly detailed meshes. Our two-stage design enables probabilistic modeling of the ill-posed single-image 3D task while maintaining high computational efficiency and great output fidelity. Using point clouds as an intermediate representation further allows for interactive user edits. Evaluated on diverse datasets, SPAR3D demonstrates superior performance over previous state-of-the-art methods, at an inference speed of 0.7 seconds. Project page with code and model: https://spar3d.github.io
+
+## CaPa: Carve-n-Paint Synthesis for Efficient 4K Textured Mesh Generation
+
+Github: https://ncsoft.github.io/CaPa/
+
+Paper: https://arxiv.org/abs/2501.09433
+
+Date: 16.01.2025
+
+##### Abstract
+The synthesis of high-quality 3D assets from textual or visual inputs has become a central objective in modern generative modeling. Despite the proliferation of 3D generation algorithms, they frequently grapple with challenges such as multi-view inconsistency, slow generation times, low fidelity, and surface reconstruction problems. While some studies have addressed some of these issues, a comprehensive solution remains elusive. In this paper, we introduce CaPa, a carve-and-paint framework that generates high-fidelity 3D assets efficiently. CaPa employs a two-stage process, decoupling geometry generation from texture synthesis. Initially, a 3D latent diffusion model generates geometry guided by multi-view inputs, ensuring structural consistency across perspectives. Subsequently, leveraging a novel, model-agnostic Spatially Decoupled Attention, the framework synthesizes high-resolution textures (up to 4K) for a given geometry. Furthermore, we propose a 3D-aware occlusion inpainting algorithm that fills untextured regions, resulting in cohesive results across the entire model. This pipeline generates high-quality 3D assets in less than 30 seconds, providing ready-to-use outputs for commercial applications. Experimental results demonstrate that CaPa excels in both texture fidelity and geometric stability, establishing a new standard for practical, scalable 3D asset generation.
