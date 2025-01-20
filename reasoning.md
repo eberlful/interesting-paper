@@ -12,6 +12,7 @@
 12. rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
 13. Towards System 2 Reasoning in LLMs: Learning How to Think With Meta Chain-of-Though
 14. Search-o1: Agentic Search-Enhanced Large Reasoning Models
+15. Evolving Deeper LLM Thinking
 
 
 ## Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
@@ -152,3 +153,12 @@ Date: 09.01.2025
 
 ##### Abstract
 Large reasoning models (LRMs) like OpenAI-o1 have demonstrated impressive long stepwise reasoning capabilities through large-scale reinforcement learning. However, their extended reasoning processes often suffer from knowledge insufficiency, leading to frequent uncertainties and potential errors. To address this limitation, we introduce Search-o1, a framework that enhances LRMs with an agentic retrieval-augmented generation (RAG) mechanism and a Reason-in-Documents module for refining retrieved documents. Search-o1 integrates an agentic search workflow into the reasoning process, enabling dynamic retrieval of external knowledge when LRMs encounter uncertain knowledge points. Additionally, due to the verbose nature of retrieved documents, we design a separate Reason-in-Documents module to deeply analyze the retrieved information before injecting it into the reasoning chain, minimizing noise and preserving coherent reasoning flow. Extensive experiments on complex reasoning tasks in science, mathematics, and coding, as well as six open-domain QA benchmarks, demonstrate the strong performance of Search-o1. This approach enhances the trustworthiness and applicability of LRMs in complex reasoning tasks, paving the way for more reliable and versatile intelligent systems. The code is available at https://github.com/sunnynexus/Search-o1.
+
+## Evolving Deeper LLM Thinking
+
+Paper: https://arxiv.org/abs/2501.09891
+
+Date: 17.01.2025
+
+##### Abstract
+We explore an evolutionary search strategy for scaling inference time compute in Large Language Models. The proposed approach, Mind Evolution, uses a language model to generate, recombine and refine candidate responses. The proposed approach avoids the need to formalize the underlying inference problem whenever a solution evaluator is available. Controlling for inference cost, we find that Mind Evolution significantly outperforms other inference strategies such as Best-of-N and Sequential Revision in natural language planning tasks. In the TravelPlanner and Natural Plan benchmarks, Mind Evolution solves more than 98% of the problem instances using Gemini 1.5 Pro without the use of a formal solver.
