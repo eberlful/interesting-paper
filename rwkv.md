@@ -21,3 +21,4 @@ Information:
 * https://arxiv.org/abs/2305.13048
 * https://github.com/BlinkDL/RWKV-LM
 * https://arxiv.org/abs/2105.14103 (An Attention Free Transformer)
+* https://www.rwkv.com/
