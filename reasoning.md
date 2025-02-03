@@ -16,6 +16,7 @@
 16. Reasoning Language Models: A Blueprint
 17. DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning
 18. Thoughts Are All Over the Place: On the Underthinking of o1-Like LLMs
+19. Large Language Models Think Too Fast To Explore Effectively
 
 
 ## Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
@@ -194,3 +195,12 @@ Date: 30.01.2025
 
 ##### Abstract
 Large language models (LLMs) such as OpenAI's o1 have demonstrated remarkable abilities in complex reasoning tasks by scaling test-time compute and exhibiting human-like deep thinking. However, we identify a phenomenon we term underthinking, where o1-like LLMs frequently switch between different reasoning thoughts without sufficiently exploring promising paths to reach a correct solution. This behavior leads to inadequate depth of reasoning and decreased performance, particularly on challenging mathematical problems. To systematically analyze this issue, we conduct experiments on three challenging test sets and two representative open-source o1-like models, revealing that frequent thought switching correlates with incorrect responses. We introduce a novel metric to quantify underthinking by measuring token efficiency in incorrect answers. To address underthinking, we propose a decoding strategy with thought switching penalty TIP that discourages premature transitions between thoughts, encouraging deeper exploration of each reasoning path. Experimental results demonstrate that our approach improves accuracy across challenging datasets without requiring model fine-tuning. Our findings contribute to understanding reasoning inefficiencies in o1-like LLMs and offer a practical solution to enhance their problem-solving capabilities.
+
+## Large Language Models Think Too Fast To Explore Effectively
+
+Paper: https://arxiv.org/abs/2501.18009
+
+Date: 29.01.2025
+
+##### Abstract
+Large Language Models have emerged many intellectual capacities. While numerous benchmarks assess their intelligence, limited attention has been given to their ability to explore, an essential capacity for discovering new information and adapting to novel environments in both natural and artificial systems. The extent to which LLMs can effectively explore, particularly in open-ended tasks, remains unclear. This study investigates whether LLMs can surpass humans in exploration during an open-ended task, using Little Alchemy 2 as a paradigm, where agents combine elements to discover new ones. Results show most LLMs underperform compared to humans, except for the o1 model, with those traditional LLMs relying primarily on uncertainty driven strategies, unlike humans who balance uncertainty and empowerment. Representational analysis of the models with Sparse Autoencoders revealed that uncertainty and choices are represented at earlier transformer blocks, while empowerment values are processed later, causing LLMs to think too fast and make premature decisions, hindering effective exploration. These findings shed light on the limitations of LLM exploration and suggest directions for improving their adaptability.
