@@ -17,6 +17,7 @@
 17. DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning
 18. Thoughts Are All Over the Place: On the Underthinking of o1-Like LLMs
 19. Large Language Models Think Too Fast To Explore Effectively
+20. s1: Simple test-time scaling
 
 
 ## Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions
@@ -204,3 +205,14 @@ Date: 29.01.2025
 
 ##### Abstract
 Large Language Models have emerged many intellectual capacities. While numerous benchmarks assess their intelligence, limited attention has been given to their ability to explore, an essential capacity for discovering new information and adapting to novel environments in both natural and artificial systems. The extent to which LLMs can effectively explore, particularly in open-ended tasks, remains unclear. This study investigates whether LLMs can surpass humans in exploration during an open-ended task, using Little Alchemy 2 as a paradigm, where agents combine elements to discover new ones. Results show most LLMs underperform compared to humans, except for the o1 model, with those traditional LLMs relying primarily on uncertainty driven strategies, unlike humans who balance uncertainty and empowerment. Representational analysis of the models with Sparse Autoencoders revealed that uncertainty and choices are represented at earlier transformer blocks, while empowerment values are processed later, causing LLMs to think too fast and make premature decisions, hindering effective exploration. These findings shed light on the limitations of LLM exploration and suggest directions for improving their adaptability.
+
+## s1: Simple test-time scaling
+
+Github: https://github.com/simplescaling/s1
+
+Paper: https://arxiv.org/abs/2501.19393
+
+Date: 31.01.2025
+
+##### Abstract
+Test-time scaling is a promising new approach to language modeling that uses extra test-time compute to improve performance. Recently, OpenAI's o1 model showed this capability but did not publicly share its methodology, leading to many replication efforts. We seek the simplest approach to achieve test-time scaling and strong reasoning performance. First, we curate a small dataset s1K of 1,000 questions paired with reasoning traces relying on three criteria we validate through ablations: difficulty, diversity, and quality. Second, we develop budget forcing to control test-time compute by forcefully terminating the model's thinking process or lengthening it by appending "Wait" multiple times to the model's generation when it tries to end. This can lead the model to double-check its answer, often fixing incorrect reasoning steps. After supervised finetuning the Qwen2.5-32B-Instruct language model on s1K and equipping it with budget forcing, our model s1 exceeds o1-preview on competition math questions by up to 27% (MATH and AIME24). Further, scaling s1 with budget forcing allows extrapolating beyond its performance without test-time intervention: from 50% to 57% on AIME24. Our model, data, and code are open-source at https://github.com/simplescaling/s1.
