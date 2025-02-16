@@ -1,5 +1,6 @@
 1. Token Assorted: Mixing Latent and Text Tokens for Improved Language Model Reasoning
 2. Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach
+3. LLM Pretraining with Continuous Concepts
 
 
 ## Token Assorted: Mixing Latent and Text Tokens for Improved Language Model Reasoning
@@ -19,3 +20,14 @@ Date: 07.02.2025
 
 ##### Abstract
 We study a novel language model architecture that is capable of scaling test-time computation by implicitly reasoning in latent space. Our model works by iterating a recurrent block, thereby unrolling to arbitrary depth at test-time. This stands in contrast to mainstream reasoning models that scale up compute by producing more tokens. Unlike approaches based on chain-of-thought, our approach does not require any specialized training data, can work with small context windows, and can capture types of reasoning that are not easily represented in words. We scale a proof-of-concept model to 3.5 billion parameters and 800 billion tokens. We show that the resulting model can improve its performance on reasoning benchmarks, sometimes dramatically, up to a computation load equivalent to 50 billion parameters.
+
+## LLM Pretraining with Continuous Concepts
+
+Github: https://github.com/facebookresearch/RAM/tree/main/projects/cocomix
+
+Paper: https://arxiv.org/abs/2502.08524
+
+Date: 12.02.2025
+
+##### Abstract
+Next token prediction has been the standard training objective used in large language model pretraining. Representations are learned as a result of optimizing for token-level perplexity. We propose Continuous Concept Mixing (CoCoMix), a novel pretraining framework that combines discrete next token prediction with continuous concepts. Specifically, CoCoMix predicts continuous concepts learned from a pretrained sparse autoencoder and mixes them into the model's hidden state by interleaving with token hidden representations. Through experiments on multiple benchmarks, including language modeling and downstream reasoning tasks, we show that CoCoMix is more sample efficient and consistently outperforms standard next token prediction, knowledge distillation and inserting pause tokens. We find that combining both concept learning and interleaving in an end-to-end framework is critical to performance gains. Furthermore, CoCoMix enhances interpretability and steerability by allowing direct inspection and modification of the predicted concept, offering a transparent way to guide the model's internal reasoning process.
