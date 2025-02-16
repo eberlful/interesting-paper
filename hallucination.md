@@ -5,6 +5,7 @@
 5. Uncertainty Estimation and Quantification for LLMs: A Simple Supervised Approach
 6. Do LLMs "know" internally when they follow instructions?
 7. Do LLMs estimate uncertainty well in instruction-following?
+8. Linear Correlation in LM's Compositional Generalization and Hallucination
 
 
 ## Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models
@@ -73,3 +74,14 @@ Date: 18.10.2024
 
 ##### Abstract
 Large language models (LLMs) could be valuable personal AI agents across various domains, provided they can precisely follow user instructions. However, recent studies have shown significant limitations in LLMs' instruction-following capabilities, raising concerns about their reliability in high-stakes applications. Accurately estimating LLMs' uncertainty in adhering to instructions is critical to mitigating deployment risks. We present, to our knowledge, the first systematic evaluation of the uncertainty estimation abilities of LLMs in the context of instruction-following. Our study identifies key challenges with existing instruction-following benchmarks, where multiple factors are entangled with uncertainty stems from instruction-following, complicating the isolation and comparison across methods and models. To address these issues, we introduce a controlled evaluation setup with two benchmark versions of data, enabling a comprehensive comparison of uncertainty estimation methods under various conditions. Our findings show that existing uncertainty methods struggle, particularly when models make subtle errors in instruction following. While internal model states provide some improvement, they remain inadequate in more complex scenarios. The insights from our controlled evaluation setups provide a crucial understanding of LLMs' limitations and potential for uncertainty estimation in instruction-following tasks, paving the way for more trustworthy AI agents.
+
+## Linear Correlation in LM's Compositional Generalization and Hallucination
+
+Github: https://github.com/KomeijiForce/LinCorr
+
+Paper: https://arxiv.org/abs/2502.04520
+
+Date: 06.02.2025
+
+##### Abstract
+The generalization of language models (LMs) is undergoing active debates, contrasting their potential for general intelligence with their struggles with basic knowledge composition (e.g., reverse/transition curse). This paper uncovers the phenomenon of linear correlations in LMs during knowledge composition. For explanation, there exists a linear transformation between certain related knowledge that maps the next token prediction logits from one prompt to another, e.g., "X lives in the city of" rightarrow "X lives in the country of" for every given X. This mirrors the linearity in human knowledge composition, such as Paris rightarrow France. Our findings indicate that the linear transformation is resilient to large-scale fine-tuning, generalizing updated knowledge when aligned with real-world relationships, but causing hallucinations when it deviates. Empirical results suggest that linear correlation can serve as a potential identifier of LM's generalization. Finally, we show such linear correlations can be learned with a single feedforward network and pre-trained vocabulary representations, indicating LM generalization heavily relies on the latter.
