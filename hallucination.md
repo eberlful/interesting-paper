@@ -6,6 +6,7 @@
 6. Do LLMs "know" internally when they follow instructions?
 7. Do LLMs estimate uncertainty well in instruction-following?
 8. Linear Correlation in LM's Compositional Generalization and Hallucination
+9. The Hidden Life of Tokens: Reducing Hallucination of Large Vision-Language Models via Visual Information Steering
 
 
 ## Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models
@@ -85,3 +86,12 @@ Date: 06.02.2025
 
 ##### Abstract
 The generalization of language models (LMs) is undergoing active debates, contrasting their potential for general intelligence with their struggles with basic knowledge composition (e.g., reverse/transition curse). This paper uncovers the phenomenon of linear correlations in LMs during knowledge composition. For explanation, there exists a linear transformation between certain related knowledge that maps the next token prediction logits from one prompt to another, e.g., "X lives in the city of" rightarrow "X lives in the country of" for every given X. This mirrors the linearity in human knowledge composition, such as Paris rightarrow France. Our findings indicate that the linear transformation is resilient to large-scale fine-tuning, generalizing updated knowledge when aligned with real-world relationships, but causing hallucinations when it deviates. Empirical results suggest that linear correlation can serve as a potential identifier of LM's generalization. Finally, we show such linear correlations can be learned with a single feedforward network and pre-trained vocabulary representations, indicating LM generalization heavily relies on the latter.
+
+## The Hidden Life of Tokens: Reducing Hallucination of Large Vision-Language Models via Visual Information Steering
+
+Paper: https://arxiv.org/abs/2502.03628
+
+Date: 05.02.2025
+
+##### Abstract
+Large Vision-Language Models (LVLMs) can reason effectively over both textual and visual inputs, but they tend to hallucinate syntactically coherent yet visually ungrounded contents. In this paper, we investigate the internal dynamics of hallucination by examining the tokens logits rankings throughout the generation process, revealing three key patterns in how LVLMs process information: (1) gradual visual information loss -- visually grounded tokens gradually become less favored throughout generation, and (2) early excitation -- semantically meaningful tokens achieve peak activation in the layers earlier than the final layer. (3) hidden genuine information -- visually grounded tokens though not being eventually decided still retain relatively high rankings at inference. Based on these insights, we propose VISTA (Visual Information Steering with Token-logit Augmentation), a training-free inference-time intervention framework that reduces hallucination while promoting genuine information. VISTA works by combining two complementary approaches: reinforcing visual information in activation space and leveraging early layer activations to promote semantically meaningful decoding. Compared to existing methods, VISTA requires no external supervision and is applicable to various decoding strategies. Extensive experiments show that VISTA on average reduces hallucination by abount 40% on evaluated open-ended generation task, and it consistently outperforms existing methods on four benchmarks across four architectures under three decoding strategies.
