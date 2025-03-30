@@ -3,6 +3,7 @@
 3. PhysicsGen: Can Generative Models Learn from Images to Predict Complex Physical Relations?
 4. Cosmos-Reason1: From Physical Common Sense To Embodied Reasoning
 5. Cosmos-Transfer1: Conditional World Generation with Adaptive Multimodal Control
+6. Exploring the Evolution of Physics Cognition in Video Generation: A Survey
 
 
 ## Cosmos World Foundation Model Platform for Physical AI
@@ -57,3 +58,14 @@ Date: 18.03.2025
 
 ##### Abstract
 We introduce Cosmos-Transfer, a conditional world generation model that can generate world simulations based on multiple spatial control inputs of various modalities such as segmentation, depth, and edge. In the design, the spatial conditional scheme is adaptive and customizable. It allows weighting different conditional inputs differently at different spatial locations. This enables highly controllable world generation and finds use in various world-to-world transfer use cases, including Sim2Real. We conduct extensive evaluations to analyze the proposed model and demonstrate its applications for Physical AI, including robotics Sim2Real and autonomous vehicle data enrichment. We further demonstrate an inference scaling strategy to achieve real-time world generation with an NVIDIA GB200 NVL72 rack. To help accelerate research development in the field, we open-source our models and code at https://github.com/nvidia-cosmos/cosmos-transfer1.
+
+## Exploring the Evolution of Physics Cognition in Video Generation: A Survey
+
+Github: https://github.com/minnie-lin/Awesome-Physics-Cognition-based-Video-Generation
+
+Paper: https://arxiv.org/abs/2503.21765
+
+Date: 27.03.2025
+
+##### Abstract
+Recent advancements in video generation have witnessed significant progress, especially with the rapid advancement of diffusion models. Despite this, their deficiencies in physical cognition have gradually received widespread attention - generated content often violates the fundamental laws of physics, falling into the dilemma of ''visual realism but physical absurdity". Researchers began to increasingly recognize the importance of physical fidelity in video generation and attempted to integrate heuristic physical cognition such as motion representations and physical knowledge into generative systems to simulate real-world dynamic scenarios. Considering the lack of a systematic overview in this field, this survey aims to provide a comprehensive summary of architecture designs and their applications to fill this gap. Specifically, we discuss and organize the evolutionary process of physical cognition in video generation from a cognitive science perspective, while proposing a three-tier taxonomy: 1) basic schema perception for generation, 2) passive cognition of physical knowledge for generation, and 3) active cognition for world simulation, encompassing state-of-the-art methods, classical paradigms, and benchmarks. Subsequently, we emphasize the inherent key challenges in this domain and delineate potential pathways for future research, contributing to advancing the frontiers of discussion in both academia and industry. Through structured review and interdisciplinary analysis, this survey aims to provide directional guidance for developing interpretable, controllable, and physically consistent video generation paradigms, thereby propelling generative models from the stage of ''visual mimicry'' towards a new phase of ''human-like physical comprehension''.
