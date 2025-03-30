@@ -6,6 +6,7 @@
 6. SPAR3D: Stable Point-Aware Reconstruction of 3D Objects from Single Images
 7. CaPa: Carve-n-Paint Synthesis for Efficient 4K Textured Mesh Generation
 8. Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation
+9. DeepMesh: Auto-Regressive Artist-mesh Creation with Reinforcement Learning
 
 ## Scaling Mesh Generation via Compressive Tokenization
 
@@ -93,3 +94,14 @@ Date: 21.01.2025
 
 ##### Abstract
 We present Hunyuan3D 2.0, an advanced large-scale 3D synthesis system for generating high-resolution textured 3D assets. This system includes two foundation components: a large-scale shape generation model -- Hunyuan3D-DiT, and a large-scale texture synthesis model -- Hunyuan3D-Paint. The shape generative model, built on a scalable flow-based diffusion transformer, aims to create geometry that properly aligns with a given condition image, laying a solid foundation for downstream applications. The texture synthesis model, benefiting from strong geometric and diffusion priors, produces high-resolution and vibrant texture maps for either generated or hand-crafted meshes. Furthermore, we build Hunyuan3D-Studio -- a versatile, user-friendly production platform that simplifies the re-creation process of 3D assets. It allows both professional and amateur users to manipulate or even animate their meshes efficiently. We systematically evaluate our models, showing that Hunyuan3D 2.0 outperforms previous state-of-the-art models, including the open-source models and closed-source models in geometry details, condition alignment, texture quality, and etc. Hunyuan3D 2.0 is publicly released in order to fill the gaps in the open-source 3D community for large-scale foundation generative models. The code and pre-trained weights of our models are available at: https://github.com/Tencent/Hunyuan3D-2
+
+## DeepMesh: Auto-Regressive Artist-mesh Creation with Reinforcement Learning
+
+Github: https://zhaorw02.github.io/DeepMesh/
+
+Paper: https://arxiv.org/abs/2503.15265
+
+Date: 19.03.2025
+
+##### Abstract
+Triangle meshes play a crucial role in 3D applications for efficient manipulation and rendering. While auto-regressive methods generate structured meshes by predicting discrete vertex tokens, they are often constrained by limited face counts and mesh incompleteness. To address these challenges, we propose DeepMesh, a framework that optimizes mesh generation through two key innovations: (1) an efficient pre-training strategy incorporating a novel tokenization algorithm, along with improvements in data curation and processing, and (2) the introduction of Reinforcement Learning (RL) into 3D mesh generation to achieve human preference alignment via Direct Preference Optimization (DPO). We design a scoring standard that combines human evaluation with 3D metrics to collect preference pairs for DPO, ensuring both visual appeal and geometric accuracy. Conditioned on point clouds and images, DeepMesh generates meshes with intricate details and precise topology, outperforming state-of-the-art methods in both precision and quality. Project page: https://zhaorw02.github.io/DeepMesh/
