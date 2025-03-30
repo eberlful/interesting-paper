@@ -9,6 +9,7 @@
 9. The Hidden Life of Tokens: Reducing Hallucination of Large Vision-Language Models via Visual Information Steering
 10. When an LLM is apprehensive about its answers -- and when its uncertainty is justified
 11. How to Steer LLM Latents for Hallucination Detection?
+12. LettuceDetect: A Hallucination Detection Framework for RAG Applications
 
 
 ## Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models
@@ -117,3 +118,14 @@ Date: 01.03.2025
 
 ##### Abstract
 Hallucinations in LLMs pose a significant concern to their safe deployment in real-world applications. Recent approaches have leveraged the latent space of LLMs for hallucination detection, but their embeddings, optimized for linguistic coherence rather than factual accuracy, often fail to clearly separate truthful and hallucinated content. To this end, we propose the Truthfulness Separator Vector (TSV), a lightweight and flexible steering vector that reshapes the LLM's representation space during inference to enhance the separation between truthful and hallucinated outputs, without altering model parameters. Our two-stage framework first trains TSV on a small set of labeled exemplars to form compact and well-separated clusters. It then augments the exemplar set with unlabeled LLM generations, employing an optimal transport-based algorithm for pseudo-labeling combined with a confidence-based filtering process. Extensive experiments demonstrate that TSV achieves state-of-the-art performance with minimal labeled data, exhibiting strong generalization across datasets and providing a practical solution for real-world LLM applications.
+
+## LettuceDetect: A Hallucination Detection Framework for RAG Applications
+
+Github: https://github.com/KRLabsOrg/LettuceDetect
+
+Paper: https://arxiv.org/abs/2502.17125
+
+Date: 24.02.2025
+
+##### Abstract
+Retrieval Augmented Generation (RAG) systems remain vulnerable to hallucinated answers despite incorporating external knowledge sources. We present LettuceDetect a framework that addresses two critical limitations in existing hallucination detection methods: (1) the context window constraints of traditional encoder-based methods, and (2) the computational inefficiency of LLM based approaches. Building on ModernBERT's extended context capabilities (up to 8k tokens) and trained on the RAGTruth benchmark dataset, our approach outperforms all previous encoder-based models and most prompt-based models, while being approximately 30 times smaller than the best models. LettuceDetect is a token-classification model that processes context-question-answer triples, allowing for the identification of unsupported claims at the token level. Evaluations on the RAGTruth corpus demonstrate an F1 score of 79.22% for example-level detection, which is a 14.8% improvement over Luna, the previous state-of-the-art encoder-based architecture. Additionally, the system can process 30 to 60 examples per second on a single GPU, making it more practical for real-world RAG applications.
