@@ -8,6 +8,7 @@
 8. The Curse of Depth in Large Language Models
 9. You Do Not Fully Utilize Transformer's Representation Capacity
 10. LLM-Microscope: Uncovering the Hidden Role of Punctuation in Context Memory of Transformers
+11. On Relation-Specific Neurons in Large Language Models
 
 
 ## The Super Weight in Large Language Models
@@ -111,3 +112,14 @@ Date: 20.02.2025
 
 ##### Abstract
 We introduce methods to quantify how Large Language Models (LLMs) encode and store contextual information, revealing that tokens often seen as minor (e.g., determiners, punctuation) carry surprisingly high context. Notably, removing these tokens -- especially stopwords, articles, and commas -- consistently degrades performance on MMLU and BABILong-4k, even if removing only irrelevant tokens. Our analysis also shows a strong correlation between contextualization and linearity, where linearity measures how closely the transformation from one layer's embeddings to the next can be approximated by a single linear mapping. These findings underscore the hidden importance of filler tokens in maintaining context. For further exploration, we present LLM-Microscope, an open-source toolkit that assesses token-level nonlinearity, evaluates contextual memory, visualizes intermediate layer contributions (via an adapted Logit Lens), and measures the intrinsic dimensionality of representations. This toolkit illuminates how seemingly trivial tokens can be critical for long-range understanding.
+
+## On Relation-Specific Neurons in Large Language Models
+
+Github: https://github.com/cisnlp/relation-specific-neurons
+
+Paper: https://arxiv.org/abs/2502.17355
+
+Date: 24.02.2025
+
+##### Abstract
+In large language models (LLMs), certain neurons can store distinct pieces of knowledge learned during pretraining. While knowledge typically appears as a combination of relations and entities, it remains unclear whether some neurons focus on a relation itself -- independent of any entity. We hypothesize such neurons detect a relation in the input text and guide generation involving such a relation. To investigate this, we study the Llama-2 family on a chosen set of relations with a statistics-based method. Our experiments demonstrate the existence of relation-specific neurons. We measure the effect of selectively deactivating candidate neurons specific to relation r on the LLM's ability to handle (1) facts whose relation is r and (2) facts whose relation is a different relation r' neq r. With respect to their capacity for encoding relation information, we give evidence for the following three properties of relation-specific neurons. (i) Neuron cumulativity. The neurons for r present a cumulative effect so that deactivating a larger portion of them results in the degradation of more facts in r. (ii) Neuron versatility. Neurons can be shared across multiple closely related as well as less related relations. Some relation neurons transfer across languages. (iii) Neuron interference. Deactivating neurons specific to one relation can improve LLM generation performance for facts of other relations. We will make our code publicly available at https://github.com/cisnlp/relation-specific-neurons.
