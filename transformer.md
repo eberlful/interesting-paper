@@ -7,6 +7,7 @@
 7. Transformer^2: Self-adaptive LLMs
 8. The Curse of Depth in Large Language Models
 9. You Do Not Fully Utilize Transformer's Representation Capacity
+10. LLM-Microscope: Uncovering the Hidden Role of Punctuation in Context Memory of Transformers
 
 
 ## The Super Weight in Large Language Models
@@ -101,3 +102,12 @@ Date: 13.02.2025
 
 ##### Abstract
 In contrast to RNNs, which compress previous tokens into a single hidden state, Transformers can attend to all previous tokens directly. However, standard Transformers only use representations from the immediately preceding layer. In this paper, we show that this design choice causes representation collapse and leads to suboptimal performance. To address this issue, we introduce Layer-Integrated Memory (LIMe), a simple yet powerful approach that preserves the model's overall memory footprint while expanding its representational capacity by allowing access to hidden states from earlier layers. Through extensive experiments across various architectures and different lookup mechanisms, we demonstrate consistent performance improvements on a wide range of tasks. Moreover, our analysis of the learned representation dynamics and our exploration of depthwise circuits reveal how LIMe integrates information across layers, pointing to promising directions for future research.
+
+## LLM-Microscope: Uncovering the Hidden Role of Punctuation in Context Memory of Transformers
+
+Paper: https://arxiv.org/abs/2502.15007
+
+Date: 20.02.2025
+
+##### Abstract
+We introduce methods to quantify how Large Language Models (LLMs) encode and store contextual information, revealing that tokens often seen as minor (e.g., determiners, punctuation) carry surprisingly high context. Notably, removing these tokens -- especially stopwords, articles, and commas -- consistently degrades performance on MMLU and BABILong-4k, even if removing only irrelevant tokens. Our analysis also shows a strong correlation between contextualization and linearity, where linearity measures how closely the transformation from one layer's embeddings to the next can be approximated by a single linear mapping. These findings underscore the hidden importance of filler tokens in maintaining context. For further exploration, we present LLM-Microscope, an open-source toolkit that assesses token-level nonlinearity, evaluates contextual memory, visualizes intermediate layer contributions (via an adapted Logit Lens), and measures the intrinsic dimensionality of representations. This toolkit illuminates how seemingly trivial tokens can be critical for long-range understanding.
