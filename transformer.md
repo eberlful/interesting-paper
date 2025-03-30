@@ -6,6 +6,7 @@
 6. Large Concept Models: Language Modeling in a Sentence Representation Space
 7. Transformer^2: Self-adaptive LLMs
 8. The Curse of Depth in Large Language Models
+9. You Do Not Fully Utilize Transformer's Representation Capacity
 
 
 ## The Super Weight in Large Language Models
@@ -90,3 +91,13 @@ Date: 09.02.2025
 
 ##### Abstract
 In this paper, we introduce the Curse of Depth, a concept that highlights, explains, and addresses the recent observation in modern Large Language Models(LLMs) where nearly half of the layers are less effective than expected. We first confirm the wide existence of this phenomenon across the most popular families of LLMs such as Llama, Mistral, DeepSeek, and Qwen. Our analysis, theoretically and empirically, identifies that the underlying reason for the ineffectiveness of deep layers in LLMs is the widespread usage of Pre-Layer Normalization (Pre-LN). While Pre-LN stabilizes the training of Transformer LLMs, its output variance exponentially grows with the model depth, which undesirably causes the derivative of the deep Transformer blocks to be an identity matrix, and therefore barely contributes to the training. To resolve this training pitfall, we propose LayerNorm Scaling, which scales the variance of output of the layer normalization inversely by the square root of its depth. This simple modification mitigates the output variance explosion of deeper Transformer layers, improving their contribution. Our experimental results, spanning model sizes from 130M to 1B, demonstrate that LayerNorm Scaling significantly enhances LLM pre-training performance compared to Pre-LN. Moreover, this improvement seamlessly carries over to supervised fine-tuning. All these gains can be attributed to the fact that LayerNorm Scaling enables deeper layers to contribute more effectively during training.
+
+
+## You Do Not Fully Utilize Transformer's Representation Capacity
+
+Paper: https://arxiv.org/abs/2502.09245
+
+Date: 13.02.2025
+
+##### Abstract
+In contrast to RNNs, which compress previous tokens into a single hidden state, Transformers can attend to all previous tokens directly. However, standard Transformers only use representations from the immediately preceding layer. In this paper, we show that this design choice causes representation collapse and leads to suboptimal performance. To address this issue, we introduce Layer-Integrated Memory (LIMe), a simple yet powerful approach that preserves the model's overall memory footprint while expanding its representational capacity by allowing access to hidden states from earlier layers. Through extensive experiments across various architectures and different lookup mechanisms, we demonstrate consistent performance improvements on a wide range of tasks. Moreover, our analysis of the learned representation dynamics and our exploration of depthwise circuits reveal how LIMe integrates information across layers, pointing to promising directions for future research.
