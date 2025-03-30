@@ -7,6 +7,7 @@
 7. Do LLMs estimate uncertainty well in instruction-following?
 8. Linear Correlation in LM's Compositional Generalization and Hallucination
 9. The Hidden Life of Tokens: Reducing Hallucination of Large Vision-Language Models via Visual Information Steering
+10. When an LLM is apprehensive about its answers -- and when its uncertainty is justified
 
 
 ## Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models
@@ -95,3 +96,14 @@ Date: 05.02.2025
 
 ##### Abstract
 Large Vision-Language Models (LVLMs) can reason effectively over both textual and visual inputs, but they tend to hallucinate syntactically coherent yet visually ungrounded contents. In this paper, we investigate the internal dynamics of hallucination by examining the tokens logits rankings throughout the generation process, revealing three key patterns in how LVLMs process information: (1) gradual visual information loss -- visually grounded tokens gradually become less favored throughout generation, and (2) early excitation -- semantically meaningful tokens achieve peak activation in the layers earlier than the final layer. (3) hidden genuine information -- visually grounded tokens though not being eventually decided still retain relatively high rankings at inference. Based on these insights, we propose VISTA (Visual Information Steering with Token-logit Augmentation), a training-free inference-time intervention framework that reduces hallucination while promoting genuine information. VISTA works by combining two complementary approaches: reinforcing visual information in activation space and leveraging early layer activations to promote semantically meaningful decoding. Compared to existing methods, VISTA requires no external supervision and is applicable to various decoding strategies. Extensive experiments show that VISTA on average reduces hallucination by abount 40% on evaluated open-ended generation task, and it consistently outperforms existing methods on four benchmarks across four architectures under three decoding strategies.
+
+## When an LLM is apprehensive about its answers -- and when its uncertainty is justified
+
+Github: https://github.com/LabARSS/question-complextiy-estimation
+
+Paper: https://arxiv.org/abs/2503.01688
+
+Date: 03.03.2025
+
+##### Abstract
+Uncertainty estimation is crucial for evaluating Large Language Models (LLMs), particularly in high-stakes domains where incorrect answers result in significant consequences. Numerous approaches consider this problem, while focusing on a specific type of uncertainty, ignoring others. We investigate what estimates, specifically token-wise entropy and model-as-judge (MASJ), would work for multiple-choice question-answering tasks for different question topics. Our experiments consider three LLMs: Phi-4, Mistral, and Qwen of different sizes from 1.5B to 72B and 14 topics. While MASJ performs similarly to a random error predictor, the response entropy predicts model error in knowledge-dependent domains and serves as an effective indicator of question difficulty: for biology ROC AUC is 0.73. This correlation vanishes for the reasoning-dependent domain: for math questions ROC-AUC is 0.55. More principally, we found out that the entropy measure required a reasoning amount. Thus, data-uncertainty related entropy should be integrated within uncertainty estimates frameworks, while MASJ requires refinement. Moreover, existing MMLU-Pro samples are biased, and should balance required amount of reasoning for different subdomains to provide a more fair assessment of LLMs performance.
