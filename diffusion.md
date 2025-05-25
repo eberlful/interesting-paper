@@ -7,6 +7,7 @@
 7. Diffusion vs. Autoregressive Language Models: A Text Embedding Perspective
 8. LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning
 9. LaViDa: A Large Diffusion Language Model for Multimodal Understanding
+10. Scaling Diffusion Transformers Efficiently via μP
 
 
 ## One Diffusion to Generate Them All
@@ -103,3 +104,15 @@ Date: 22.05.2025
 
 ##### Abstract
 Modern Vision-Language Models (VLMs) can solve a wide range of tasks requiring visual reasoning. In real-world scenarios, desirable properties for VLMs include fast inference and controllable generation (e.g., constraining outputs to adhere to a desired format). However, existing autoregressive (AR) VLMs like LLaVA struggle in these aspects. Discrete diffusion models (DMs) offer a promising alternative, enabling parallel decoding for faster inference and bidirectional context for controllable generation through text-infilling. While effective in language-only settings, DMs' potential for multimodal tasks is underexplored. We introduce LaViDa, a family of VLMs built on DMs. We build LaViDa by equipping DMs with a vision encoder and jointly fine-tune the combined parts for multimodal instruction following. To address challenges encountered, LaViDa incorporates novel techniques such as complementary masking for effective training, prefix KV cache for efficient inference, and timestep shifting for high-quality sampling. Experiments show that LaViDa achieves competitive or superior performance to AR VLMs on multi-modal benchmarks such as MMMU, while offering unique advantages of DMs, including flexible speed-quality tradeoff, controllability, and bidirectional reasoning. On COCO captioning, LaViDa surpasses Open-LLaVa-Next-8B by +4.1 CIDEr with 1.92x speedup. On bidirectional tasks, it achieves +59% improvement on Constrained Poem Completion. These results demonstrate LaViDa as a strong alternative to AR VLMs. Code and models will be released in the camera-ready version.
+
+## Scaling Diffusion Transformers Efficiently via μP
+
+Github: https://github.com/ML-GSAI/Scaling-Diffusion-Transformers-muP
+
+Paper: https://arxiv.org/abs/2505.15270
+
+Date: 21.05.2025
+
+##### Abstract
+Diffusion Transformers have emerged as the foundation for vision generative models, but their scalability is limited by the high cost of hyperparameter (HP) tuning at large scales. Recently, Maximal Update Parametrization (muP) was proposed for vanilla Transformers, which enables stable HP transfer from small to large language models, and dramatically reduces tuning costs. However, it remains unclear whether muP of vanilla Transformers extends to diffusion Transformers, which differ architecturally and objectively. In this work, we generalize standard muP to diffusion Transformers and validate its effectiveness through large-scale experiments. First, we rigorously prove that muP of mainstream diffusion Transformers, including DiT, U-ViT, PixArt-alpha, and MMDiT, aligns with that of the vanilla Transformer, enabling the direct application of existing muP methodologies. Leveraging this result, we systematically demonstrate that DiT-muP enjoys robust HP transferability. Notably, DiT-XL-2-muP with transferred learning rate achieves 2.9 times faster convergence than the original DiT-XL-2. Finally, we validate the effectiveness of muP on text-to-image generation by scaling PixArt-alpha from 0.04B to 0.61B and MMDiT from 0.18B to 18B. In both cases, models under muP outperform their respective baselines while requiring small tuning cost, only 5.5% of one training run for PixArt-alpha and 3% of consumption by human experts for MMDiT-18B. These results establish muP as a principled and efficient framework for scaling diffusion Transformers.
+
