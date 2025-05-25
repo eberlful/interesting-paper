@@ -10,6 +10,7 @@
 10. TransMLA: Multi-head Latent Attention Is All You Need
 11. Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention
 12. Does Time Have Its Place? Temporal Heads: Where Language Models Recall Time-specific Information
+13. How Do Large Vision-Language Models See Text in Image? Unveiling the Distinctive Role of OCR Heads
 
 
 ## Star Attention: Efficient LLM Inference over Long Sequences
@@ -127,3 +128,12 @@ Date: 20.02.2025
 
 ##### Abstract
 While the ability of language models to elicit facts has been widely investigated, how they handle temporally changing facts remains underexplored. We discover Temporal Heads, specific attention heads primarily responsible for processing temporal knowledge through circuit analysis. We confirm that these heads are present across multiple models, though their specific locations may vary, and their responses differ depending on the type of knowledge and its corresponding years. Disabling these heads degrades the model's ability to recall time-specific knowledge while maintaining its general capabilities without compromising time-invariant and question-answering performances. Moreover, the heads are activated not only numeric conditions ("In 2004") but also textual aliases ("In the year ..."), indicating that they encode a temporal dimension beyond simple numerical representation. Furthermore, we expand the potential of our findings by demonstrating how temporal knowledge can be edited by adjusting the values of these heads.
+
+## How Do Large Vision-Language Models See Text in Image? Unveiling the Distinctive Role of OCR Heads
+
+Paper: https://arxiv.org/abs/2505.15865
+
+Github: 21.05.2025
+
+##### Abstract
+Despite significant advancements in Large Vision Language Models (LVLMs), a gap remains, particularly regarding their interpretability and how they locate and interpret textual information within images. In this paper, we explore various LVLMs to identify the specific heads responsible for recognizing text from images, which we term the Optical Character Recognition Head (OCR Head). Our findings regarding these heads are as follows: (1) Less Sparse: Unlike previous retrieval heads, a large number of heads are activated to extract textual information from images. (2) Qualitatively Distinct: OCR heads possess properties that differ significantly from general retrieval heads, exhibiting low similarity in their characteristics. (3) Statically Activated: The frequency of activation for these heads closely aligns with their OCR scores. We validate our findings in downstream tasks by applying Chain-of-Thought (CoT) to both OCR and conventional retrieval heads and by masking these heads. We also demonstrate that redistributing sink-token values within the OCR heads improves performance. These insights provide a deeper understanding of the internal mechanisms LVLMs employ in processing embedded textual information in images.
